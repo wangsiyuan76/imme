@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  TestAnimation
+//
+//  Created by 王思源 on 14/11/4.
+//  Copyright (c) 2014年 王思源. All rights reserved.
+//
+
+#ifndef TestAnimation_PrefixHeader_pch
+#define TestAnimation_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "UtilTool.h"
+    #import "ConstantsDefine.h"
+    #import "UIScrollView+MJRefresh.h"
+#endif

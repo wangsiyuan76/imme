@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MenuUprightViewBtn">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JB-8O-7s7">
+                    <rect key="frame" x="4" y="2" width="269" height="52"/>
+                    <color key="backgroundColor" red="0.42954280573058146" green="1" blue="0.22764768391911927" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="哈哈哈，你个逗比">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-3k-AVn">
+                    <rect key="frame" x="299" y="3" width="35" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Rkl-Ue-TQM"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8JB-8O-7s7" firstAttribute="bottom" secondItem="y7F-3k-AVn" secondAttribute="bottom" id="0Yv-MN-8UW"/>
+                <constraint firstAttribute="bottom" secondItem="y7F-3k-AVn" secondAttribute="bottom" id="7RV-Oj-3uk"/>
+                <constraint firstItem="8JB-8O-7s7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Nas-PR-p6S"/>
+                <constraint firstItem="y7F-3k-AVn" firstAttribute="centerY" secondItem="8JB-8O-7s7" secondAttribute="centerY" id="TQy-YP-3AN"/>
+                <constraint firstItem="y7F-3k-AVn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="fzr-wC-yZ4"/>
+                <constraint firstItem="y7F-3k-AVn" firstAttribute="leading" secondItem="8JB-8O-7s7" secondAttribute="trailing" constant="26" id="nC7-H4-h9T"/>
+                <constraint firstAttribute="trailing" secondItem="y7F-3k-AVn" secondAttribute="trailing" constant="5" id="uvq-kM-pqX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headBtn" destination="y7F-3k-AVn" id="oMg-lm-Rvo"/>
+                <outlet property="titleBtn" destination="8JB-8O-7s7" id="PwB-kz-VQQ"/>
+            </connections>
+            <point key="canvasLocation" x="227.5" y="122.5"/>
+        </view>
+    </objects>
+</document>
