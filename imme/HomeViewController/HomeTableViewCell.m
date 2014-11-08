@@ -24,14 +24,23 @@
 {
     _contentLab.text = str;
     CGRect contentFrame = _contentLab.frame;
-//    CGSize contentSize = [_contentLab.text sizeWithFont:_contentLab.font constrainedToSize:CGSizeMake(_contentLab.frame.size.width, 2000) lineBreakMode:NSLineBreakByCharWrapping];
+//    CGSize contentSize = [self showCellHeightWithTitle:str];
     NSDictionary *attribute = [NSDictionary dictionaryWithObjectsAndKeys:_contentLab.font,NSFontAttributeName, nil];
-    CGSize contentSize = [_contentLab.text boundingRectWithSize:CGSizeMake(_contentLab.frame.size.width - 100, 2000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingTruncatesLastVisibleLine attributes:attribute context:nil].size;
+    CGSize contentSize = [str boundingRectWithSize:CGSizeMake(_contentLab.frame.size.width - 100, 2000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingTruncatesLastVisibleLine attributes:attribute context:nil].size;
     contentFrame.size.height = contentSize.height;
+    _cellHeight = contentSize.height;
    _contentLab.frame = contentFrame;
     DLog(@"--------%lf",_contentLab.frame.size.height);
-
 }
+//返回一个cell的高度，根据文字的多少自适应
+-(CGSize)showCellHeightWithTitle:(NSString *)title
+{
+    NSDictionary *attribute = [NSDictionary dictionaryWithObjectsAndKeys:_contentLab.font,NSFontAttributeName, nil];
+    CGSize contentSize = [title boundingRectWithSize:CGSizeMake(_contentLab.frame.size.width - 100, 2000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingTruncatesLastVisibleLine attributes:attribute context:nil].size;
+    return contentSize;
+}
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

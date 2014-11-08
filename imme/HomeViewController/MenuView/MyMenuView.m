@@ -17,16 +17,11 @@
 
 @implementation MyMenuView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
--(instancetype)initWithFrame:(CGRect)frame
+-(instancetype)initWithFrame:(CGRect)frame andType:(NSInteger)type
 {
     self = [super initWithFrame:frame];
+    
+    _type = type;
     
     upView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, BUTTONSIZEHEIGHT + 10)];
     upView.backgroundColor = [UIColor clearColor];
@@ -55,10 +50,11 @@
     
     //创建最上面一条的按钮
     //self.bounds.size.width - _mainBtn.bounds.size.width - BUTTONRANGE
-    _selectBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"];
-    _countBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"];
-    _addressBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"];
-    
+
+    _selectBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"AndTag:0];
+    _countBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"AndTag:1];
+    _addressBtn = [self showUpMenuBtnWithImageName:@"icon_bar_add_clock"AndTag:2];
+  
     //创建竖着的菜单
     _upBtn1 = [self showMenuUprightBtnWithY:BUTTONRANGE];
     _upBtn2 = [self showMenuUprightBtnWithY:BUTTONRANGE * 2 + UprightButHeight];
@@ -125,10 +121,12 @@
 }
 
 //创建最顶上的几个按钮
--(UIButton *)showUpMenuBtnWithImageName:(NSString *)imageName
+-(UIButton *)showUpMenuBtnWithImageName:(NSString *)imageName AndTag:(NSInteger)tag
 {
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, _mainBtn.bounds.origin.y, BUTTONSIZEWIDTH, BUTTONSIZEHEIGHT)];
     [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickHeaderBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btn.tag = tag;
     btn.alpha = 0;
     btn.center = _mainBtn.center;
     [upView addSubview:btn];
@@ -139,10 +137,20 @@
 {
     MenuUprightViewBtn *uprightBtn = [[MenuUprightViewBtn alloc]init];
     uprightBtn = [UtilTool loadViewOfClass:[MenuUprightViewBtn class]];
+    if (_type != 0)
+    {
+        uprightBtn.titleBtn.hidden = YES;
+    }
+   
     uprightBtn.frame = CGRectMake(BUTTONRANGE, y, ScreenWidth - BUTTONRANGE * 2, UprightButHeight);
     uprightBtn.alpha = 0;
     uprightBtn.center = CGPointMake(ScreenWidth/2, 0);
     [menuScroll addSubview:uprightBtn];
     return uprightBtn;
+}
+#pragma mark 按钮的点击方法
+-(void)clickHeaderBtn:(UIButton *)sender
+{
+    [_delegate clickHomeHeaderBtnDelegate:sender];
 }
 @end

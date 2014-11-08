@@ -18,7 +18,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-3k-AVn">
-                    <rect key="frame" x="299" y="3" width="35" height="53"/>
+                    <rect key="frame" x="299" y="5" width="35" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="Rkl-Ue-TQM"/>
                     </constraints>

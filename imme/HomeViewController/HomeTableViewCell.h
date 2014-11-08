@@ -14,5 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
+@property (weak, nonatomic) IBOutlet UIView *allLabView;
+
+@property (assign, nonatomic) CGFloat cellHeight;
+
 -(void)setContentWithStr:(NSString *)str;
+-(CGSize)showCellHeightWithTitle:(NSString *)title;
 @end

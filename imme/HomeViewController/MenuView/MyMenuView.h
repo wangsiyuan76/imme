@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MenuBtnAnimation.h"
 #import "MenuUprightViewBtn.h"
+
+@protocol MenuViewDelegate <NSObject>
+-(void)clickHomeHeaderBtnDelegate:(UIButton *)btn;//顶部菜单按钮的点击代理
+@end
+
 @interface MyMenuView : UIView
 {
     NSInteger clickCount;
@@ -17,9 +22,14 @@
     MenuBtnAnimation *menuAni;//按钮的动画
     UIScrollView *menuScroll;
     
+    NSInteger _type;
 }
 
+@property (strong, nonatomic) NSArray *headerArr;
+
 @property (strong, nonatomic) UIButton *mainBtn;
+@property (assign, nonatomic) id<MenuViewDelegate> delegate;
+
 //顶上横向的三个按钮
 @property (strong, nonatomic) UIButton *countBtn;
 @property (strong, nonatomic) UIButton *selectBtn;
@@ -31,4 +41,5 @@
 @property (strong, nonatomic) MenuUprightViewBtn *upBtn3;
 @property (strong, nonatomic) MenuUprightViewBtn *upBtn4;
 @property (strong, nonatomic) MenuUprightViewBtn *upBtn5;
+-(instancetype)initWithFrame:(CGRect)frame andType:(NSInteger)type;
 @end
