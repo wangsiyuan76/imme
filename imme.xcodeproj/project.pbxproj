@@ -95,6 +95,7 @@
 		1783F9E51A0DEC8B0051AD73 /* PublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1783F9E31A0DEC8B0051AD73 /* PublishViewController.xib */; };
 		1783F9E91A0DF35E0051AD73 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783F9E71A0DF35E0051AD73 /* HomeViewController.m */; };
 		1783F9EA1A0DF35E0051AD73 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1783F9E81A0DF35E0051AD73 /* HomeViewController.xib */; };
+		17E4D8681A0E06B400769A1D /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D8671A0E06B400769A1D /* FXBlurView.m */; };
 		17FF89211A09B3D90089F2CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF89201A09B3D90089F2CC /* main.m */; };
 		17FF89241A09B3D90089F2CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF89231A09B3D90089F2CC /* AppDelegate.m */; };
 		17FF89271A09B3D90089F2CC /* imme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FF89251A09B3D90089F2CC /* imme.xcdatamodeld */; };
@@ -225,6 +226,8 @@
 		1783F9E61A0DF35E0051AD73 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		1783F9E71A0DF35E0051AD73 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1783F9E81A0DF35E0051AD73 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		17E4D8661A0E06B400769A1D /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		17E4D8671A0E06B400769A1D /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		17FF891B1A09B3D90089F2CC /* imme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF891F1A09B3D90089F2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF89201A09B3D90089F2CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -396,6 +399,15 @@
 			path = imme/PublishViewController;
 			sourceTree = SOURCE_ROOT;
 		};
+		17E4D8651A0E06B400769A1D /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				17E4D8661A0E06B400769A1D /* FXBlurView.h */,
+				17E4D8671A0E06B400769A1D /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
 		17FF89121A09B3D90089F2CC = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +485,7 @@
 		17FF894A1A09BA440089F2CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				17E4D8651A0E06B400769A1D /* FXBlurView */,
 				17FF894B1A09BA440089F2CC /* MJRefresh */,
 			);
 			path = Common;
@@ -761,6 +774,7 @@
 			files = (
 				17FF89241A09B3D90089F2CC /* AppDelegate.m in Sources */,
 				17FF89271A09B3D90089F2CC /* imme.xcdatamodeld in Sources */,
+				17E4D8681A0E06B400769A1D /* FXBlurView.m in Sources */,
 				171474A81A0A11CE00CBD6C9 /* HomeTableViewCell.m in Sources */,
 				17FF89631A09BA440089F2CC /* UIView+Extension.m in Sources */,
 				1783F9DF1A0DE5630051AD73 /* HomeCellObj.m in Sources */,

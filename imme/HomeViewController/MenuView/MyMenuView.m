@@ -66,10 +66,6 @@
 }
 -(void)showAnimation:(id)sender
 {
-    NSInteger arn = rand();
-    NSLog(@"%ld",arn%10);
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"showMenuUprightBtn" object:nil];
     clickCount ++;
     CGFloat pi;
     if (clickCount % 2 == 0)
@@ -82,6 +78,9 @@
         pi = M_PI;
         [self showMenuView];
     }
+    //添加一个通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"showMenuUprightBtn" object:[NSNumber numberWithInteger:clickCount]];
+    
     cabasic.toValue = [NSNumber numberWithFloat:pi];//结束角度
 //    _mainBtn.layer.transform = CATransform3DRotate(_mainBtn.layer.transform, pi, 0, 0, 0);
     _mainBtn.transform = CGAffineTransformIdentity;

@@ -9,12 +9,13 @@
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
 #import "PublishViewController.h"
-
+#import "FXBlurView.h"
 @interface HomeViewController ()
 {
     UINib *nib;
     
     NSInteger colorIndex;
+    FXBlurView *fxb;//模糊地背景视图
 }
 @end
 
@@ -34,13 +35,30 @@
     _testArrData = [NSArray arrayWithObjects:@"撒发生的发生法哈德多久啊回复的发生的",@"撒发生的发生法哈德多久啊回复的发生的撒发生的发生法哈德多久啊回复的发生的发生的发生法哈德多久啊回复的发生的撒发生的发生",@"的萨芬的奋斗",@"ddfsdfasdfasdfasd",@"俺的沙发的沙发的所得税",@"俺发大水发dfdf税",@"二二恶我完全而", nil];
     
     //接收通知，改变MyMenuView的高度
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeMenuViewHeight) name:@"showMenuUprightBtn" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeMenuViewHeight:) name:@"showMenuUprightBtn" object:nil];
 }
--(void)changeMenuViewHeight
+-(void)changeMenuViewHeight:(NSNotification *)obj
 {
+    NSNumber *num = obj.object;
+    NSInteger select = [num integerValue];
+    if (select%2 != 0)//是否显示模糊背景
+    {
+        if (!fxb)
+        {
+            fxb = [[FXBlurView alloc]initWithFrame:self.view.frame];
+            fxb.blurRadius = 1;
+            [self.homeTableView addSubview:fxb];
+            self.homeTableView.userInteractionEnabled = NO;
+        }
+    }
+    else
+    {
+        [fxb removeFromSuperview];
+        fxb = nil;
+        self.homeTableView.userInteractionEnabled = YES;
+    }
     DLog(@"dddd");
-    //    self.homeTableView.userInteractionEnabled = NO;
-}
+   }
 #pragma mark MenuViewDelegate
 -(void)clickHomeHeaderBtnDelegate:(UIButton *)btn
 {
@@ -123,10 +141,7 @@
 //    return  cell.cellHeight + 30;
     return 130;
 }
--(void)changeMenuViewHeights
-{
-    NSLog(@"dfasdfasdfasas");
-}
+
 
 -(void)dealloc
 {
